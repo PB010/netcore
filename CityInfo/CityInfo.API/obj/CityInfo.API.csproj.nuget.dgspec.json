@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\VS\\.NET Core\\CityInfo\\CityInfo.API\\CityInfo.API.csproj": {}
+    "C:\\Users\\bIur\\Desktop\\Asp.Net\\Core\\CityInfo\\CityInfo.API\\CityInfo.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\VS\\.NET Core\\CityInfo\\CityInfo.API\\CityInfo.API.csproj": {
+    "C:\\Users\\bIur\\Desktop\\Asp.Net\\Core\\CityInfo\\CityInfo.API\\CityInfo.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\VS\\.NET Core\\CityInfo\\CityInfo.API\\CityInfo.API.csproj",
+        "projectUniqueName": "C:\\Users\\bIur\\Desktop\\Asp.Net\\Core\\CityInfo\\CityInfo.API\\CityInfo.API.csproj",
         "projectName": "CityInfo.API",
-        "projectPath": "C:\\Users\\User\\Desktop\\VS\\.NET Core\\CityInfo\\CityInfo.API\\CityInfo.API.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\VS\\.NET Core\\CityInfo\\CityInfo.API\\obj\\",
+        "projectPath": "C:\\Users\\bIur\\Desktop\\Asp.Net\\Core\\CityInfo\\CityInfo.API\\CityInfo.API.csproj",
+        "packagesPath": "C:\\Users\\bIur\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bIur\\Desktop\\Asp.Net\\Core\\CityInfo\\CityInfo.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\bIur\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -47,19 +47,20 @@
               "version": "[2.1.1, )",
               "autoReferenced": true
             },
-            "Microsoft.AspNetCore.Mvc.Core": {
-              "target": "Package",
-              "version": "[2.2.5, )"
-            },
             "Microsoft.AspNetCore.Razor.Design": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.1.2, )"
             },
             "Microsoft.NETCore.App": {
+              "suppressParent": "All",
               "target": "Package",
               "version": "[2.1.0, )",
               "autoReferenced": true
+            },
+            "NLog.Extensions.Logging": {
+              "target": "Package",
+              "version": "[1.5.0, )"
             }
           },
           "imports": [
