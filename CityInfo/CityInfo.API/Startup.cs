@@ -1,7 +1,9 @@
-﻿using CityInfo.API.Services;
+﻿using CityInfo.API.Entities;
+using CityInfo.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -23,6 +25,9 @@ namespace CityInfo.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            var connectionString = Startup.Configuration["connectionStrings:cityInfoDbConnectionString"];
+            services.AddDbContext<CityInfoContext>(o => o.UseSqlServer(connectionString));
 #if DEBUG
             services.AddTransient<IMailService, LocalMailService>();
 #else
