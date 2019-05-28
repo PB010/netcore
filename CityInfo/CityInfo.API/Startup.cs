@@ -1,8 +1,9 @@
-﻿using CityInfo.API.Entities;
+﻿using AutoMapper;
+using CityInfo.API.Entities;
+using CityInfo.API.Models;
 using CityInfo.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,6 +26,7 @@ namespace CityInfo.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddScoped<ICityInfoRepository, CityInfoRepository>();
 
             var connectionString = Startup.Configuration["connectionStrings:cityInfoDbConnectionString"];
             services.AddDbContext<CityInfoContext>(o => o.UseSqlServer(connectionString));
@@ -70,12 +72,24 @@ namespace CityInfo.API
 
             app.UseStatusCodePages();
 
+            Mapper.Initialize(cfg =>
+            {
+                cfg.CreateMap<City, CitiesWithoutPointsOfInterestDto>();
+                cfg.CreateMap<City, CityDto>();
+                cfg.CreateMap<PointsOfInterest, PointsOfInterestDto>();
+                cfg.CreateMap<PointsOfInterestForCreationDto, PointsOfInterest>();
+                cfg.CreateMap<UpdatePointOfInterestDto, PointsOfInterest>();
+                cfg.CreateMap<PointsOfInterest, UpdatePointOfInterestDto>();
+            });
+
             app.UseMvc();
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+
+
+            //app.Run(async (context) =>
+            //{
+            //    await context.Response.WriteAsync("Hello World!");
+            //});
         }
     }
 }
